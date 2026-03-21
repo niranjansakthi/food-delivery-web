@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yummy — Modern Food Delivery. Premium SaaS experience with icon-based fine dining discovery.">
+    <title>Yummy — Future of Food Delivery</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Yummy</div>
+            </a>
+
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('show')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="restaurants.html" class="nav-link"><i class="fa-solid fa-utensils"></i> Restaurants</a></li>
+                <li><a href="offers.html" class="nav-link"><i class="fa-solid fa-percent"></i> Offers</a></li>
+                <li><a href="login.html" id="login-link" class="nav-link"><i class="fa-solid fa-user"></i> Login</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link">
+                        <div class="cart-icon-wrapper">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge hidden" id="cart-badge">0</span>
+                        </div>
+                        <span>Cart</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div>
+                <h1>Modern delivery,<br>zero compromise.</h1>
+                <p>Curated dining experiences with a minimalist aesthetic. Find your next favorite meal through our premium icon-driven discovery.</p>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search for restaurant, cuisine or dish…">
+                    <button class="btn btn-primary" onclick="window.location.href='restaurants.html'">
+                         Search
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="container" style="padding-top: 24px; padding-bottom: 40px;">
+            <div class="categories-container" id="categories-container">
+                <a href="restaurants.html" class="category-pill active">
+                    <span class="category-icon">🍕</span> Pizza
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">🍔</span> Burger
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">☕</span> Coffee
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">🍰</span> Desserts
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">🥗</span> Healthy
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">🍛</span> Biryani
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">🍝</span> Pasta
+                </a>
+                <a href="restaurants.html" class="category-pill">
+                    <span class="category-icon">🍣</span> Sushi
+                </a>
+            </div>
+        </section>
+
+        <!-- Popular Restaurants Section -->
+        <section class="container" style="padding-top: 24px; padding-bottom: 48px;">
+            <h2 class="section-title mb-4">Top Restaurant Chains</h2>
+            <div class="grid-listing" id="restaurants-container">
+                <!-- Javascript will render restaurants here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Yummy</div>
+                    <p>Experience the next generation of food delivery. Built with a focus on simplicity, speed, and premium design.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Partner Program</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Yummy Tech. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/restaurants.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

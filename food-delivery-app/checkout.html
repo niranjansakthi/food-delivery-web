@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your food delivery order with secure checkout on Yummy.">
+    <title>Checkout — Yummy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .checkout-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-7);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .checkout-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: var(--space-5);
+            color: var(--text-cream);
+        }
+
+        .checkout-card h3 i {
+            color: var(--accent-gold);
+            margin-right: 8px;
+        }
+
+        .summary-card {
+            position: sticky;
+            top: 88px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-3);
+            border-bottom: 1px dashed var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        .summary-item strong {
+            color: var(--text-cream);
+            font-weight: 600;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-4);
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--space-4);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+        }
+
+        .summary-total strong {
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .summary-card {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Yummy</div>
+            </a>
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('show')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="restaurants.html" class="nav-link"><i class="fa-solid fa-utensils"></i> Restaurants</a></li>
+                <li><a href="offers.html" class="nav-link"><i class="fa-solid fa-percent"></i> Offers</a></li>
+                <li><a href="login.html" id="login-link" class="nav-link"><i class="fa-solid fa-user"></i> Login</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link">
+                        <div class="cart-icon-wrapper">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge hidden" id="cart-badge">0</span>
+                        </div>
+                        <span>Cart</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="container page-fade-in" style="padding-top: 16px;">
+            <h1 class="section-title">Secure Checkout</h1>
+            
+            <div class="checkout-layout">
+                
+                <div class="checkout-card">
+                    <h3><i class="fa-solid fa-location-dot"></i>Delivery Address</h3>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label class="form-label">Complete Address</label>
+                            <textarea id="address" class="form-control" rows="3" placeholder="Enter your full delivery address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+                        </div>
+                        
+                        <button type="submit" id="place-order-btn" class="btn btn-primary btn-block glow" style="padding: 16px; font-size: 0.9rem; font-weight: 700;">
+                            <i class="fa-solid fa-check"></i> Place Order Now
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="checkout-card summary-card">
+                    <h3><i class="fa-solid fa-receipt"></i>Order Summary</h3>
+                    
+                    <div id="checkout-items">
+                        <!-- Javascript will render items here -->
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Total Pay</span>
+                        <strong id="checkout-total">₹0</strong>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

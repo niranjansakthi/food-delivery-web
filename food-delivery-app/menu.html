@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse the restaurant menu and add your favorite dishes to cart on Yummy.">
+    <title>Menu — Yummy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Yummy</div>
+            </a>
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('show')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="restaurants.html" class="nav-link active"><i class="fa-solid fa-utensils"></i> Restaurants</a></li>
+                <li><a href="offers.html" class="nav-link"><i class="fa-solid fa-percent"></i> Offers</a></li>
+                <li><a href="login.html" id="login-link" class="nav-link"><i class="fa-solid fa-user"></i> Login</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link">
+                        <div class="cart-icon-wrapper">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge hidden" id="cart-badge">0</span>
+                        </div>
+                        <span>Cart</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="container page-fade-in" style="padding-top: 16px;">
+            <h1 class="section-title">Menu</h1>
+            
+            <div class="grid-listing" id="menu-container">
+                <!-- Javascript will render menus here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

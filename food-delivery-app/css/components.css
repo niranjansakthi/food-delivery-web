@@ -1,0 +1,295 @@
+/* components.css - Futuristic Gradient & Icon-Based Components (No Images) */
+
+/* ========================================
+   BUTTONS
+======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-pill);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-normal);
+  font-family: var(--font-main);
+  text-transform: capitalize;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-light) 100%);
+  color: #0F0F0F;
+  box-shadow: 0 4px 15px rgba(255, 122, 0, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 122, 0, 0.4), 0 0 30px rgba(255, 122, 0, 0.2);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(255, 122, 0, 0.05);
+}
+
+.btn-block { width: 100%; }
+.btn-small { padding: 9px 18px; font-size: 0.82rem; }
+
+/* ========================================
+   MODERN CARDS — Icon & Gradient Based
+======================================== */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Base Gradient Layers for Cards */
+.card-grad-orange { background: var(--grad-orange); }
+.card-grad-green { background: var(--grad-green); }
+.card-grad-purple { background: var(--grad-purple); }
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: rgba(255, 255, 255, 0.04);
+  filter: brightness(1.2);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(255, 255, 255, 0.05);
+  border-color: var(--border-hover);
+}
+
+/* Minimalist Icon Slot */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-6);
+  color: var(--text-primary);
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-6);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-primary);
+}
+
+.card-meta {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-chip {
+  background: rgba(255, 122, 0, 0.1);
+  color: var(--accent-primary);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ========================================
+   HERO SECTION — Futurism
+======================================== */
+.hero {
+  padding: 100px 0 120px;
+  text-align: left;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 122, 0, 0.08) 0%, transparent 40%);
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.05;
+  margin-bottom: var(--space-6);
+  background: linear-gradient(135deg, #fff 50%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin-bottom: var(--space-8);
+}
+
+.hero .search-box {
+  display: flex;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-pill);
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  max-width: 550px;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+
+.hero .search-box:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.15);
+}
+
+.hero .search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 14px 20px;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  outline: none;
+}
+
+/* ========================================
+   CATEGORIES - Gradient Pills
+======================================== */
+.categories-container {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding: var(--space-4) 0;
+  scrollbar-width: none;
+}
+
+.category-pill {
+  padding: 12px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-pill);
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-pill:hover,
+.category-pill.active {
+  background: rgba(255, 122, 0, 0.08);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.category-icon { font-size: 1.1rem; }
+
+/* ========================================
+   FORMS & TOASTS
+======================================== */
+.form-control {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  transition: all var(--transition-normal);
+}
+
+.form-control:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.toast {
+  background: #1A1A1A;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 16px 24px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  border-left: 4px solid var(--accent-primary);
+}
+
+/* ========================================
+   AUTH CONTAINER
+======================================== */
+.auth-container {
+  max-width: 420px;
+  margin: 60px auto;
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-header { margin-bottom: 32px; text-align: center; }
+.auth-header h2 { font-size: 1.75rem; margin-bottom: 8px; }
+.auth-switch { margin-top: 24px; text-align: center; font-size: 0.88rem; color: var(--text-secondary); }
+.auth-switch a { color: var(--accent-primary); font-weight: 600; }
